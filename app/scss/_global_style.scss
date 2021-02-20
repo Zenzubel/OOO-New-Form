@@ -1,4 +1,5 @@
 .menu-burger {
+	// .menu-burger__icon
 	&__icon {
 		display: none;
 		width: 30px;
@@ -64,15 +65,17 @@
 	&__container {
 		display: none;
 		@media (max-width: 991.98px) {
-			display: block;
-			position: absolute;
-			top: 0;
-			right: -260px;
-			width: 100%;
-			max-width: 260px;
-			background-color: #cacaca;
-			padding: 30px;
-			height: 100vh;
+			top: -100%;
+			&.active {
+				display: block;
+				position: absolute;
+				top: 100px;
+				left: 0;
+				width: 100%;
+				background-color: #cacaca;
+				padding: 30px;
+				height: 100vh;
+			}
 		};
 	}
 	// .menu-burger__list

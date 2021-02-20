@@ -1,3 +1,54 @@
+//start header
+.header {
+	// .header__wrapper
+	&__wrapper {
+		position: fixed;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		background-color: #fff;
+	}
+	// .header__inner
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 86px;
+		outline: 1px solid red;
+		&.active {
+			height: 50px;
+		}
+	}
+	// .header__logo
+	&__logo {
+	}
+	// .header__row
+	&__row {
+		max-width: 562px;
+		width: 100%;
+	}
+	// .header__menu-list
+	&__menu-list {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	// .header__menu-item
+	&__menu-item {
+	}
+	// .header__menu-link
+	&__menu-link {
+	}
+	// .header__phone
+	&__phone {
+	}
+	// .header__phone-link
+	&__phone-link {
+	}
+}
+//end header
+//start galary
 .galary {
 	// .galary__werapper
 	&__werapper {
@@ -36,9 +87,4 @@
 		}
 	}
 }
-.container {
-}
-.popup-link {
-}
-.image {
-}
+//end galary

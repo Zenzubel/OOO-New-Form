@@ -91,17 +91,33 @@ p {
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../../fonts/Montserrat-Bold.woff2") format("woff2"), url("../../fonts/Montserrat-Bold.woff") format("woff");
+  font-family: 'Roboto';
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../../fonts/Montserrat-Regular.woff2") format("woff2"), url("../../fonts/Montserrat-Regular.woff") format("woff");
+  font-family: 'Roboto';
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/Roboto-Regular.woff2") format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("../fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -229,6 +245,38 @@ body.lock {
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
+}
+
+.header__wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: #fff;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 86px;
+  outline: 1px solid red;
+}
+
+.header__inner.active {
+  height: 50px;
+}
+
+.header__row {
+  max-width: 562px;
+  width: 100%;
+}
+
+.header__menu-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .galary__images {
@@ -376,12 +424,15 @@ body.lock {
   }
 
   .menu-burger__container {
+    top: -100%;
+  }
+
+  .menu-burger__container.active {
     display: block;
     position: absolute;
-    top: 0;
-    right: -260px;
+    top: 100px;
+    left: 0;
     width: 100%;
-    max-width: 260px;
     background-color: #cacaca;
     padding: 30px;
     height: 100vh;
