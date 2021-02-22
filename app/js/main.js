@@ -27,6 +27,69 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 ////////end menu burger//////////
+/////////////////start map///////////////////////
+ymaps.ready(init);
+var myMap;
+	function init () {
+		var myMap = new ymaps.Map("map", {
+			center:[55.02176818641737,82.95640157449007],
+			zoom: 18,
+			// Выключаем все управление картой
+			controls: []
+		}); 
+		var myGeoObjects = [];
+		// Указываем координаты метки
+		myGeoObjects = new ymaps.Placemark([55.02176818641737,82.95640157449007],{
+			balloonContentHeader: 'ООО "Новая форма"',
+			balloonContentBody: `
+				- пошив спецодежды <br>
+				- продажа спецодежды <br>
+				- услуги ателье <br>
+				ул. Бориса Богаткова, 101.
+			`,
+			balloonContentFooter: "+7-923-17-33-711",
+		},{
+			iconLayout: 'default#image',
+			iconImageHref: 'images/favicon/favicon.png', 
+			// Размеры иконки
+			iconImageSize: [100, 100],
+			// Смещение верхнего угла относительно основания иконки
+			iconImageOffset: [-250, -50]
+		});
+
+		var clusterer = new ymaps.Clusterer({
+			clusterDisableClickZoom: false,
+			clusterOpenBalloonOnClick: false,
+		});
+
+		clusterer.add(myGeoObjects);
+		myMap.geoObjects.add(clusterer);
+		// Отключим zoom
+		myMap.behaviors.disable('scrollZoom');
+	}
+/////////////////end map///////////////////////
+///start header scroll/////////////
+//////////////////////start scrollMagic//////////////////////
+		// initScrollMagic
+	var controller = new ScrollMagic.Controller();
+	// start scene
+	new ScrollMagic.Scene({
+		triggerElement: "",
+		duration: '0',
+		triggerHook: 0.1,
+		offset: 10,
+		reverse: true})
+	.setClassToggle(".header__inner", "active") // add class toggle
+	.addIndicators({
+			name: 'anim scene',
+			colorTrigger: 'black',
+			colorStart: 'red',
+			colorEnd: 'green'
+		})
+	.addTo(controller);
+	//end scene
+//////////////////////end scrollMagic//////////////////////
+///end header scroll/////////////
 /////////start main screen tabs
 // const tabBtn = document.querySelectorAll('.about__tab-title');
 // const tabList = document.querySelectorAll('.about__tab-list');
@@ -62,24 +125,30 @@ document.addEventListener('DOMContentLoaded', () => {
 // });
 /////////end main screen tabs
 ////////////////////start slider Swiper////////////////////
-// let mySwipeRealIndex;
-// 	let mySwiper = new Swiper('.feedback__container', {
-// 		containerModifierClass: 'feedback__container', 
-// 		wrapperClass: 'feedback__wrapper',
-// 		slideClass: 'feedback__item',
-// 		parallax: false,
-// 		loop: false,
-// 		slidesPerView: 'auto',
-// 		spaceBetween: 30,
-// 		freeMode: false,
-// 		centeredSlides: true,
-// 		simulateTouch: true,
-// 		autoHeight: false,
-// 		navigation: {
-// 			nextEl: '.feedback__button-next',
-// 			prevEl: '.feedback__button-prev',
-// 		},
-// 	});
+	let mySwiper = new Swiper('.catalog__container', {
+		containerModifierClass: 'catalog__container', 
+		wrapperClass: 'catalog__wrapper',
+		slideClass: 'catalog__item',
+		loop: false,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		freeMode: false,
+		centeredSlides: false,
+		simulateTouch: true,
+		autoHeight: false,
+		navigation: {
+			nextEl: '.catalog__button-next',
+			prevEl: '.catalog__button-prev',
+		},
+		breakpoints: {
+			600: {
+				slidesPerView: 2,
+			},
+			991: {
+				slidesPerView: 3,
+			},
+		}
+	});
 ////////////////////end slider Swiper////////////////////
 
 const galaryParent = document.querySelector('.galary__images');
