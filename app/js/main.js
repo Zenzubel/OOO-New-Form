@@ -2,9 +2,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 //==================start menu-burger===========================
 	const burgerIcon = document.querySelector('.menu-burger__icon');
-	const burgerMenu = document.querySelector('.menu-drop');
 	const burgerMenuList = document.querySelector('.menu-burger__container');
-	const burgerMenuLink = document.querySelectorAll('.menu-drop__link');
+	const burgerMenuLink = document.querySelectorAll('.menu-burger__link');
 	const body = document.querySelector('body');
 
 	burgerIcon.addEventListener('click', (event) => {
@@ -20,13 +19,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	burgerMenuList.addEventListener('click', (event) =>{
 		const target = event.target;
-		if (target && target.classList.contains('menu-drop__link')){
+		if (target && target.classList.contains('menu-burger__link')){
 			burgerIcon.classList.remove('active');
 			burgerMenuList.classList.remove('active');
 			body.classList.remove('lock');
 		}
 	});
-////////end menu burger//////////
+///////////end menu burger//////////
+//////////start header menu link active////////////
+const menuBtn = document.querySelectorAll('.header__menu-link');
+const menuParent = document.querySelector('.header__menu-list');
+
+function hideActive() {
+	menuBtn.forEach(item => {
+		item.classList.remove('active');
+	});
+}
+
+function showActive (i = 0){
+	menuBtn[i].classList.add('active');
+}
+
+hideActive();
+showActive();
+
+menuParent.addEventListener('click', (event) => {
+	const target = event.target;
+	event.preventDefault();
+	if (target && target.classList.contains('header__menu-link')) {
+		menuBtn.forEach((item, i) => {
+			if (target == item) {
+				hideActive();
+				showActive(i);
+			}
+		});
+	}
+});
+//////////end header menu link active////////////
 /////////////////start map///////////////////////
 ymaps.ready(init);
 var myMap;
@@ -50,11 +79,11 @@ var myMap;
 			balloonContentFooter: "+7-923-17-33-711",
 		},{
 			iconLayout: 'default#image',
-			iconImageHref: 'images/favicon/favicon.png', 
+			iconImageHref: 'images/map-logo.svg', 
 			// Размеры иконки
 			iconImageSize: [100, 100],
 			// Смещение верхнего угла относительно основания иконки
-			iconImageOffset: [-250, -50]
+			iconImageOffset: [-50, -100]
 		});
 
 		var clusterer = new ymaps.Clusterer({
@@ -68,6 +97,99 @@ var myMap;
 		myMap.behaviors.disable('scrollZoom');
 	}
 /////////////////end map///////////////////////
+////start feedback form/////////
+const getForm = document.querySelector('#form');
+
+const getLabelName = document.querySelector('#label-name');
+const getLabelEmail = document.querySelector('#label-email');
+
+const getInputName = document.querySelector('#input-name');
+const getInputEmail = document.querySelector('#input-email');
+
+const getButton = document.querySelector('#button');
+
+getForm.addEventListener('submit', formSend);
+
+
+async function formSend(event) {
+	event.preventDefault();
+
+	let error = checkInputs(getForm);
+
+	let formData = new FormData(getForm);
+
+	if (error === 0) {
+		getForm.classList.add('sending');
+
+		let response = await fetch('sendmailer.php', {
+			metod: 'POST',
+			body: formData,
+		});
+
+		if (response.ok) {
+			let result = await response.json();
+			alert(result.message);
+			getForm.reset();
+			getForm.classList.remove('sending');
+		} else {
+			alert('Ошибка');
+			getForm.classList.remove('sending');
+		}
+
+	} else {
+		alert('Заполните обязательные поля');
+	}
+}
+
+function checkInputs(getForm) {
+
+	let error = 0;
+
+	const getInputNameValue = getInputName.value.trim();
+	const getInputEmailValue = getInputEmail.value.trim();
+
+	const checkEmail = /^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$/.test(getInputEmailValue);
+
+
+	if (getInputNameValue === '' || getInputNameValue === null) {
+		addError(getLabelName, 'Заполните это поле');
+		error++;
+	} else {
+		addComplete(getLabelName, '');
+	}
+
+	if (getInputEmailValue === '' || getInputEmailValue === null) {
+		addError(getLabelEmail, 'Заполните это поле');
+		error++;
+	}
+	else if (checkEmail) {
+		addError(getLabelEmail, 'Некорректный Email');
+	} else {
+		addComplete(getLabelEmail, '');
+	}
+	return error;
+}
+
+function addError (input, message) {
+	input.classList.add('error');
+	input.classList.remove('complete');
+
+
+	const labelElement = input.parentElement;
+	const messageError = labelElement.querySelector('#error-text');
+	messageError.innerText = message;
+
+}
+
+function addComplete (input, message) {
+	input.classList.add('complete');
+	input.classList.remove('error');
+
+	const labelElement = input.parentElement;
+	const messageError = labelElement.querySelector('#error-text');
+	messageError.innerText = message;
+}
+////end feedback form/////////
 ///start header scroll/////////////
 //////////////////////start scrollMagic//////////////////////
 		// initScrollMagic

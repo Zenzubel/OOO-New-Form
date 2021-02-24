@@ -6,27 +6,27 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="robots" content="noindex, nofollow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<link rel="icon" href="images/favicon.svg">
+		<link rel="icon" href="images/favicon/favicon.svg">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="content">
 				<!-- start-header -->
-				<header class="header lock-padding">
-					<div class="header__wrapper">
+				<header class="header">
+					<div class="header__wrapper lock-padding">
 						<div class="container">
 							<div class="header__inner">
 								<a class="header__logo" href="index.html">
-									<img src="images/logo.png" alt="логотип компании">
+									<img src="images/logo-New-Form.svg" alt="логотип компании">
 								</a>
 								<nav class="header__row">
 									<ul class="header__menu-list">
 										<li class="header__menu-item">
-											<a class="header__menu-link" href="#">Главная</a>
+											<a class="header__menu-link" href="#index.html">Главная</a>
 										</li>
 										<li class="header__menu-item">
-											<a class="header__menu-link" href="#">Каталог</a>
+											<a class="header__menu-link" href="#catalog.html">Каталог</a>
 										</li>
 										<li class="header__menu-item">
 											<a class="header__menu-link" href="#">Услуги ателье</a>
@@ -51,432 +51,213 @@
 					</div>
 				</header>
 				<div class="menu-burger__container">
-						<ul class="menu-burger__list">
-							<li class="menu-burger__item">
-								<a href="#" class="menu-burger__link">Главная</a>
-							</li>
-							<li class="menu-burger__item">
-								<a href="#" class="menu-burger__link">Каталог</a>
-							</li>
-							<li class="menu-burger__item">
-								<a href="#" class="menu-burger__link">Услуги ателье</a>
-							</li>
-							<li class="menu-burger__item">
-								<a href="#" class="menu-burger__link">Галерея</a>
-							</li>
-							<li class="menu-burger__item">
-								<a href="#" class="menu-burger__link">Контакты</a>
-							</li>
-						</ul>
-					</div>
+					<ul class="menu-burger__list">
+						<li class="menu-burger__item">
+							<a href="#index.html" class="menu-burger__link">Главная</a>
+						</li>
+						<li class="menu-burger__item">
+							<a href="#catalog.html" class="menu-burger__link">Каталог</a>
+						</li>
+						<li class="menu-burger__item">
+							<a href="#" class="menu-burger__link">Услуги ателье</a>
+						</li>
+						<li class="menu-burger__item">
+							<a href="#" class="menu-burger__link">Галерея</a>
+						</li>
+						<li class="menu-burger__item">
+							<a href="#" class="menu-burger__link">Контакты</a>
+						</li>
+						<li class="menu-burger__item">
+							<a class="menu-burger__link" href="tel:+79231733711"> +7-923-17-33-711</a>
+						</li>
+					</ul>
+				</div>
 				<!-- end-header -->
-				<!-- start-main -->
-				<main class="main">
-					<!-- start main-screen -->
-					<section class="main-screen">
-						<div class="main-screen__wrapper">
-							<div class="main-screen__plane">
-								<div class="container">
-									<div class="main-screen__inner">
-										<div class="main-screen__title title">
-											<span>Пошив спецодежды.</span>
-											<span>Индивидуальный пошив одежды.</span>
-											<span>Услуги ателье</span>
-										</div>
-										<button class="main-screen__btn btn-style">Заказать пошив</button>
-									</div>
+				<!-- start-catalog -->
+				<section class="catalog">
+					<div class="catalog__wrapper">
+						<div class="container">
+							<div class="catalog__inner">
+								<div class="breadcrumbs">
+									<ul class="breadcrumbs__list">
+										<li class="breadcrumbs__item">
+											<a class="breadcrumbs__page" href="index.html">Главная</a>
+										</li>
+										<li class="breadcrumbs__item">
+											<a class="breadcrumbs__page" href="catalog-main.html">Каталог</a>
+										</li>
+										<li class="breadcrumbs__item">
+											<span class="breadcrumbs__page-active">Утепленная одежда</span>
+										</li>
+									</ul>
 								</div>
-							</div>
-						</div>
-					</section>
-					<!--end main-screen -->
-					<!-- start success -->
-					<section class="success">
-						<div class="success__wrap">
-							<div class="success__text title">
-								Успешно работаем в области производства и реализации Спецодежды
-							</div>
-						</div>
-					</section>
-					<!-- end success -->
-					<!-- start approach -->
-					<section class="approach">
-						<div class="approach__wrapper">
-							<div class="container">
-								<div class="approach__inner">
-									<div class="approach__title title">Наш подход к работе</div>
-									<div class="approach__row">
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/1.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														Комплексное обеспечение спецодеждой, униформой. Все товары производиться в соответствии с действующими ГОСТами.
-													</div>
+								<div class="catalog__title title">Каталог</div>
+								<div class="catalog__weather">
+									<a class="catalog__season catalog__season--winter active" href="#">Утепленная одежда</a>
+									<a class="catalog__season catalog__season--summer" href="#">Летняя одежда</a>
+								</div>
+								<div class="catalog__row">
+									<div class="catalog__card">
+										<div class="catalog__content">
+											<div class="catalog__discription">
+												<div class="catalog__image">
+													<picture class="catalog__picture">
+														<source srcset="images/catalog/2.jpg" type="image/webp">
+														<img src="images/catalog/2.jpg" alt=""></img>
+													</picture>
+												</div>
+												<div class="catalog__text">
+													Униформа костюм рабочий Стандарт Плюс
 												</div>
 											</div>
-										</div>
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/2.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														Шьем и реализуем постельное бельё, одеяла, одежду для повседневного спроса и отдыха.
-													</div>
+											<div class="catalog__more">
+												<div class="catalog__price">
+													<span>500,00</span>
+													<span>руб</span>
 												</div>
-											</div>
-										</div>
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/3.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														Шьём из обычных и специально обработанных материалов.
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/4.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														Основные приоритеты — качество продукции и исполнение договорных обязательств. Мы заинтересованы в долгосрочных партнёрских отношениях.
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/5.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														На всех стадиях производства действует система контроля качества, начиная с приёма сырья, заканчивая выпуском готовой продукции.
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="approach__card">
-											<div class="approach__card-wrap">
-												<div class="approach__box">
-													<div class="approach__icon">
-														<img src="images/icons/work/6.svg" alt="иконка карточки">
-													</div>
-													<div class="approach__text">
-														По желанию заказчика возможна индивидуальная разработка любой модели.
-													</div>
+												<div class="catalog__specifications">
+													<a class="catalog__specifications-link" href="#">Характеристики</a>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- end approach -->
-					<!-- start catalog -->
-					<section class="catalog">
-						<div class="catalog__inner">
-							<div class="catalog__title title">Наш каталог</div>
-							<div class="catalog__subtitle">Любое изделие вы можете заказать оптом или приобрести в розницу в нашем <a href="#">отделе.</a>
-							</div>
-							<div class="catalog__bg">
-								<div class="container">
-									<div class="catalog__additional">
-										<div class="catalog__container">
-											<div class="catalog__wrapper">
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
+									<div class="catalog__card">
+										<div class="catalog__content">
+											<div class="catalog__discription">
+												<div class="catalog__image">
+													<picture class="catalog__picture">
+														<source srcset="images/catalog/2.jpg" type="image/webp">
+														<img src="images/catalog/2.jpg" alt=""></img>
+													</picture>
 												</div>
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
+												<div class="catalog__text">
+													Униформа костюм рабочий Стандарт Плюс
 												</div>
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
+											</div>
+											<div class="catalog__more">
+												<div class="catalog__price">
+													<span>500,00</span>
+													<span>руб</span>
 												</div>
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
-												</div>
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
-												</div>
-												<div class="catalog__item">
-													<div class="catalog__box">
-														<div class="catalog__info">
-															<div class="catalog__image">
-																<picture class="catalog__img">
-																	<source srcset="images/catalog/1.jpg" type="image/webp">
-																	<img src="images/catalog/1.jpg" alt="">
-																</picture>
-															</div>
-															<div class="catalog__caption">Наименоване товара</div>
-														</div>
-														<button class="catalog__btn btn-style">Перейти в каталог</button>
-													</div>
+												<div class="catalog__specifications">
+													<a class="catalog__specifications-link" href="#">Характеристики</a>
 												</div>
 											</div>
 										</div>
-										<button class="catalog__button-next"></button>
-										<button class="catalog__button-prev"></button>
 									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- end catalog -->
-					<!-- start stages -->
-					<section class="stages">
-						<div class="stages__wrapper">
-							<div class="container">
-								<div class="stages__inner">
-									<div class="stages__title title">Этапы реализации заказа</div>
-									<div class="stages__row">
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">1</div>
-												<div class="stages__text">
-													Согласование дизайн-макета изделия.
+									<div class="catalog__card">
+										<div class="catalog__content">
+											<div class="catalog__discription">
+												<div class="catalog__image">
+													<picture class="catalog__picture">
+														<source srcset="images/catalog/2.jpg" type="image/webp">
+														<img src="images/catalog/2.jpg" alt=""></img>
+													</picture>
+												</div>
+												<div class="catalog__text">
+													Униформа костюм рабочий Стандарт Плюс
+												</div>
+											</div>
+											<div class="catalog__more">
+												<div class="catalog__price">
+													<span>500,00</span>
+													<span>руб</span>
+												</div>
+												<div class="catalog__specifications">
+													<a class="catalog__specifications-link" href="#">Характеристики</a>
 												</div>
 											</div>
 										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">2</div>
-												<div class="stages__text">
-													Согласование объемов работ и сроков.
+									</div>
+									<div class="catalog__card">
+										<div class="catalog__content">
+											<div class="catalog__discription">
+												<div class="catalog__image">
+													<picture class="catalog__picture">
+														<source srcset="images/catalog/2.jpg" type="image/webp">
+														<img src="images/catalog/2.jpg" alt=""></img>
+													</picture>
+												</div>
+												<div class="catalog__text">
+													Униформа костюм рабочий Стандарт Плюс
+												</div>
+											</div>
+											<div class="catalog__more">
+												<div class="catalog__price">
+													<span>500,00</span>
+													<span>руб</span>
+												</div>
+												<div class="catalog__specifications">
+													<a class="catalog__specifications-link" href="#">Характеристики</a>
 												</div>
 											</div>
 										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">3</div>
-												<div class="stages__text">
-													Согласование материала изделия.
+									</div>
+									<div class="catalog__card">
+										<div class="catalog__content">
+											<div class="catalog__discription">
+												<div class="catalog__image">
+													<picture class="catalog__picture">
+														<source srcset="images/catalog/2.jpg" type="image/webp">
+														<img src="images/catalog/2.jpg" alt=""></img>
+													</picture>
+												</div>
+												<div class="catalog__text">
+													Униформа костюм рабочий Стандарт Плюс
 												</div>
 											</div>
-										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">4</div>
-												<div class="stages__text">
-													Заключение договора и предоплата.
+											<div class="catalog__more">
+												<div class="catalog__price">
+													<span>500,00</span>
+													<span>руб</span>
 												</div>
-											</div>
-										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">5</div>
-												<div class="stages__text">
-													Производство изделий с промежуточным контролем качества
-												</div>
-											</div>
-										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">6</div>
-												<div class="stages__text">
-													Окончание работ. Прием качества заказчиком
-												</div>
-											</div>
-										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">7</div>
-												<div class="stages__text">
-													Окончательный расчет.
-												</div>
-											</div>
-										</div>
-										<div class="stages__card">
-											<div class="stages__card-box">
-												<div class="stages__numb">8</div>
-												<div class="stages__text">
-													Доставка готовых изделий заказчику.
+												<div class="catalog__specifications">
+													<a class="catalog__specifications-link" href="#">Характеристики</a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</section>
-					<!-- end stages -->
-					<!-- start glad -->
-					<section class="glad">
-						<div class="glad__wrapper">
-							<div class="container">
-								<div class="glad__inner">
-									<div class="glad__title title">Рады шить для Вас!</div>
-									<div class="glad__row">
-										<div class="glad__card">
-											<div class="glad__card-box">
-												<div class="glad__icon">
-													<img src="images/icons/glad/1.svg" alt="иконка карточки">
-												</div>
-												<div class="glad__text">
-													Наш коллектив дружно, усердно и с большой самоотдачей стремится к достижению наилучших результатов.
-												</div>
-											</div>
-										</div>
-										<div class="glad__card">
-											<div class="glad__card-box">
-												<div class="glad__icon">
-													<img src="images/icons/glad/2.svg" alt="иконка карточки">
-												</div>
-												<div class="glad__text">
-													Для оптовых покупателей существует гибкая система скидок!
-												</div>
-											</div>
-										</div>
-										<div class="glad__card">
-											<div class="glad__card-box">
-												<div class="glad__icon">
-													<img src="images/icons/glad/3.svg" alt="иконка карточки">
-												</div>
-												<div class="glad__text">
-													Мы всегда будем рады сотрудничеству!
-												</div>
-											</div>
-										</div>
-									</div>
+								<div class="paginations">
+									<ul class="paginations__list">
+										<li class="paginations__item">
+											<button class="paginations__prev"></button>
+										</li>
+										<li class="paginations__item active">
+											<a class="paginations__link" href="#">1</a>
+										</li>
+										<li class="paginations__item">
+											<a class="paginations__link" href="#">2</a>
+										</li>
+										<li class="paginations__item">
+											<a class="paginations__link" href="#">3</a>
+										</li>
+										<li class="paginations__item">
+											<a class="paginations__link" href="#">4</a>
+										</li>
+										<li class="paginations__item">
+											<button class="paginations__next"></button>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
-					</section>
-					<!-- end glad -->
-					<!-- start success -->
-					<section class="success">
-						<div class="success__wrap">
-							<div class="success__text title">
-								Хотите сделать заказ на пошив? <br> Звоните по телефону 8-923-17-33-711
-							</div>
-						</div>
-					</section>
-					<!-- end success -->
-					<!-- start location -->
-					<section class="location">
-						<div class="location__wrapper">
-							<div class="container">
-								<div class="location__inner">
-									<div class="location__info">
-										<div class="location__title title">Как нас найти</div>
-										<p class="location__text">
-											Посетите нас и наш выставочный зал. Вы сможете примерить любой понравившейся комплект одежды и купить в розницу.
-										</p>
-										<div class="location__address">
-											<span>Мы находимся по адресу</span>
-											<span>г. Новосибирск, ул. Б. Богаткова, 101.</span>
-											<span>Работаем с понедельника по пятницу</span>
-											<span>с 9:00-18:00.</span>
-										</div>
-									</div>
-									<div class="location__map-wrapper">
-										<div id="map"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- end location -->
-				</main>
-				<!-- end-main -->
+					</div>
+				</section>
+				<!-- end-catalog -->
 			</div>
 			<!-- start-footer -->
 			<footer class="footer">
 				<div class="footer__wrapper">
 					<div class="footer__logo-box">
 						<a class="header__logo" href="index.html">
-							<img src="images/logo.png" alt="логотип компании">
+							<img src="images/logo-New-Form.svg" alt="логотип компании">
 						</a>
 					</div>
 					<div class="container">
 						<div class="footer__inner">
-							<div class="footer__row">
-								<ul class="header__menu-list">
-									<li class="header__menu-item">
-										<a class="header__menu-link" href="#">Главная</a>
-									</li>
-									<li class="header__menu-item">
-										<a class="header__menu-link" href="#">Каталог</a>
-									</li>
-									<li class="header__menu-item">
-										<a class="header__menu-link" href="#">Услуги ателье</a>
-									</li>
-									<li class="header__menu-item">
-										<a class="header__menu-link" href="#">Галерея</a>
-									</li>
-									<li class="header__menu-item">
-										<a class="header__menu-link" href="#">Контакты</a>
-									</li>
-									<li class="header__menu-item">
-										<a class="header__menu-link header__menu-link--footer" href="#">+7-923-17-33-711</a>
-									</li>
-								</ul>
+							<div class="footer__phone-wrap">
+								<a class="footer__phone" href="tel:+79231733711">+7-923-173-37-11</a>
 							</div>
 							<div class="footer__copyright">
 								Сайт разработан специально для ООО "НФ" 2021г.
@@ -487,8 +268,7 @@
 			</footer>
 			<!-- end-footer -->
 		</div>
-		<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-		<script src="js/script/popup/popups.js"></script>
+		<script src="js/scroll-anim.js"></script>
 		<script src="js/libs.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>

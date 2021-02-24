@@ -66,38 +66,46 @@
 		display: none;
 		@media (max-width: 991.98px) {
 			display: block;
-			position: absolute;
+			position: fixed;
 			z-index: 40;
-			top: -100%;
+			top: -120%;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #cacaca;
+			background-color: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(5px);
 			padding: 30px;
 			transition-duration: 0.6s;
 			&.active {
 				top: 0;
 				transition-duration: 0.6s;
+				overflow: auto;
 			}
 		};
 	}
 	// .menu-burger__list
 	&__list {
-		padding: 100px 30px 50px;
+		padding: 50px 0;
 	}
 	// .menu-burger__item
 	&__item {
 		width: 100%;
+		margin: 12px 0;
+		background-color: rgba(0, 0, 0, 0.4);
 	}
 	// .menu-burger__link
 	&__link {
-		padding: 5px 0;
+		text-align: center;
+		padding: 12px 0;
 		width: 100%;
-		color: #000;
-		font-size: 22px;
+		color: #fff;
+		font-size: 32px;
 		font-style: normal;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 40px;
+		@media (max-width: 1170px) {
+			font-size: calc(25px + (32 - 25) * ((100vw - 320px) / (1170 - 320)));
+		};
 	}
 }
 
@@ -123,10 +131,123 @@
 	font-weight: 700;
 	line-height: 120%;
 	@media (max-width: 1170px) {
-		font-size: calc(28px + (42 - 28) * ((100vw - 320px) / (1170 - 320)));
+		font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1170 - 320)));
 		};
 }
 #map {
 	height: 550px;
 	width: 100%;
+	@media (max-width: 991.98px) {
+		height: 350px;
+	};
+}
+
+.breadcrumbs {
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+	}
+	// .breadcrumbs__item
+	&__item {
+		+ .breadcrumbs__item {
+			position: relative;
+			padding-left: 17px;
+			&:before {
+				position:absolute;
+				content: "/";
+				top:0;
+				left: 6px;
+				color: rgba(114, 114, 114, 1);
+			}
+		}
+	}
+	// .breadcrumbs__page
+	&__page {
+		color: #727272;
+		&:hover {
+			transition-duration: 0.3s;
+			text-decoration: underline;
+		}
+	}
+	// .breadcrumbs__page-active
+	&__page-active {
+		color: rgba(114, 114, 114, 0.8);
+	}
+}
+
+.paginations {
+	max-width: 500px;
+	margin: 0 auto;
+	// .paginations__list
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	// .paginations__item
+	&__item {
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		transition-duration: 0.3s;
+		position: relative;
+		@media (min-width: 991.98px) {
+			&:hover {
+				transition-duration: 0.3s;
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		};
+		&.active {
+			&:before {
+				position:absolute;
+				content: "";
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 40px;
+				height: 3px;
+				background-color: #4782A4;
+			}
+		}
+	}
+	// .paginations__link
+	&__link {
+		width: 100%;
+		height: 100%;
+		line-height: 40px;
+		font-size: 18px;
+		font-weight: 700;
+		color: #000;
+	}
+	&__next, 
+	&__prev {
+		width: 40px;
+		height: 40px;
+		position: relative;
+		background-color: transparent;
+		&:before {
+			position:absolute;
+			content: "";
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 32px;
+			height: 32px;
+			background-size: 32px 32px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	// .paginations__next
+	&__next {
+		&:before {
+			background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7573 11.7573L20.9999 15.9999L16.7573 20.2426' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 16H21' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+		}
+	}
+	// .paginations__prev
+	&__prev {
+		&:before {
+			background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.2426 11.7573L11 15.9999L15.2426 20.2426' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 16H11' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+		}
+	}
 }
