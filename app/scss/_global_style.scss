@@ -142,6 +142,19 @@
 	};
 }
 
+.page {
+	// .page__wrapper
+	&__wrapper {
+		padding: 154px 0 40px;
+	}
+	// .page__inner
+	&__inner {
+	}
+	// .page__title
+	&__title {
+		margin: 30px 0;
+	}
+}
 .breadcrumbs {
 	// .breadcrumbs__list
 	&__list {

@@ -57,45 +57,45 @@ menuParent.addEventListener('click', (event) => {
 });
 //////////end header menu link active////////////
 /////////////////start map///////////////////////
-ymaps.ready(init);
-var myMap;
-	function init () {
-		var myMap = new ymaps.Map("map", {
-			center:[55.02176818641737,82.95640157449007],
-			zoom: 18,
-			// Выключаем все управление картой
-			controls: []
-		}); 
-		var myGeoObjects = [];
-		// Указываем координаты метки
-		myGeoObjects = new ymaps.Placemark([55.02176818641737,82.95640157449007],{
-			balloonContentHeader: 'ООО "Новая форма"',
-			balloonContentBody: `
-				- пошив спецодежды <br>
-				- продажа спецодежды <br>
-				- услуги ателье <br>
-				ул. Бориса Богаткова, 101.
-			`,
-			balloonContentFooter: "+7-923-17-33-711",
-		},{
-			iconLayout: 'default#image',
-			iconImageHref: 'images/map-logo.svg', 
-			// Размеры иконки
-			iconImageSize: [100, 100],
-			// Смещение верхнего угла относительно основания иконки
-			iconImageOffset: [-50, -100]
-		});
+// ymaps.ready(init);
+// var myMap;
+// 	function init () {
+// 		var myMap = new ymaps.Map("map", {
+// 			center:[55.02176818641737,82.95640157449007],
+// 			zoom: 18,
+// 			// Выключаем все управление картой
+// 			controls: []
+// 		}); 
+// 		var myGeoObjects = [];
+// 		// Указываем координаты метки
+// 		myGeoObjects = new ymaps.Placemark([55.02176818641737,82.95640157449007],{
+// 			balloonContentHeader: 'ООО "Новая форма"',
+// 			balloonContentBody: `
+// 				- пошив спецодежды <br>
+// 				- продажа спецодежды <br>
+// 				- услуги ателье <br>
+// 				ул. Бориса Богаткова, 101.
+// 			`,
+// 			balloonContentFooter: "+7-923-17-33-711",
+// 		},{
+// 			iconLayout: 'default#image',
+// 			iconImageHref: 'images/map-logo.svg', 
+// 			// Размеры иконки
+// 			iconImageSize: [100, 100],
+// 			// Смещение верхнего угла относительно основания иконки
+// 			iconImageOffset: [-50, -100]
+// 		});
 
-		var clusterer = new ymaps.Clusterer({
-			clusterDisableClickZoom: false,
-			clusterOpenBalloonOnClick: false,
-		});
+// 		var clusterer = new ymaps.Clusterer({
+// 			clusterDisableClickZoom: false,
+// 			clusterOpenBalloonOnClick: false,
+// 		});
 
-		clusterer.add(myGeoObjects);
-		myMap.geoObjects.add(clusterer);
-		// Отключим zoom
-		myMap.behaviors.disable('scrollZoom');
-	}
+// 		clusterer.add(myGeoObjects);
+// 		myMap.geoObjects.add(clusterer);
+// 		// Отключим zoom
+// 		myMap.behaviors.disable('scrollZoom');
+// 	}
 /////////////////end map///////////////////////
 ////start feedback form/////////
 const getForm = document.querySelector('#form');
@@ -108,66 +108,38 @@ const getInputEmail = document.querySelector('#input-email');
 
 const getButton = document.querySelector('#button');
 
-getForm.addEventListener('submit', formSend);
-
-
-async function formSend(event) {
+getForm.addEventListener('submit', (event) => {
 	event.preventDefault();
+	checkInputs();
 
-	let error = checkInputs(getForm);
+});
 
-	let formData = new FormData(getForm);
-
-	if (error === 0) {
-		getForm.classList.add('sending');
-
-		let response = await fetch('sendmailer.php', {
-			metod: 'POST',
-			body: formData,
-		});
-
-		if (response.ok) {
-			let result = await response.json();
-			alert(result.message);
-			getForm.reset();
-			getForm.classList.remove('sending');
-		} else {
-			alert('Ошибка');
-			getForm.classList.remove('sending');
-		}
-
-	} else {
-		alert('Заполните обязательные поля');
-	}
-}
-
-function checkInputs(getForm) {
-
-	let error = 0;
+function checkInputs () {
 
 	const getInputNameValue = getInputName.value.trim();
 	const getInputEmailValue = getInputEmail.value.trim();
+
+	console.log(getInputEmailValue);
 
 	const checkEmail = /^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$/.test(getInputEmailValue);
 
 
 	if (getInputNameValue === '' || getInputNameValue === null) {
-		addError(getLabelName, 'Заполните это поле');
-		error++;
+		addError(getInputName, 'Заполните это поле');
 	} else {
-		addComplete(getLabelName, '');
+		addComplete(getInputName, '');
 	}
 
 	if (getInputEmailValue === '' || getInputEmailValue === null) {
-		addError(getLabelEmail, 'Заполните это поле');
-		error++;
+		addError(getInputEmail, 'Заполните это поле');
+		console.log(getInputEmailValue, 'sds');
 	}
 	else if (checkEmail) {
-		addError(getLabelEmail, 'Некорректный Email');
+		addError(getInputEmail, 'Некорректный Email');
+		console.log(getInputEmailValue, 'sdssdsdsd');
 	} else {
-		addComplete(getLabelEmail, '');
+		addComplete(getInputEmail, '');
 	}
-	return error;
 }
 
 function addError (input, message) {
